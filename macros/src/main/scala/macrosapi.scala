@@ -10,18 +10,18 @@ import scala.reflect.macros.blackbox.Context
 //todo; optimisation for string (write custom .size/.write for string to prevent double time .size computation)
 //todo; remove .read exception and rewrite all the protobuf methods that throws exceptions
 
-object macrosapi {
+// object macrosapi {
 
-  def caseCodecAuto[A]: MessageCodec[A] = macro Impl.caseCodecAuto[A]
-  def caseCodecNums[A](nums: (String, Int)*): MessageCodec[A] = macro Impl.caseCodecString[A]
-  def caseCodecIdx[A]: MessageCodec[A] = macro Impl.caseCodecIdx[A]
+  // def caseCodecAuto[A]: MessageCodec[A] = macro Impl.caseCodecAuto[A]
+//   def caseCodecNums[A](nums: (String, Int)*): MessageCodec[A] = macro Impl.caseCodecString[A]
+//   def caseCodecIdx[A]: MessageCodec[A] = macro Impl.caseCodecIdx[A]
 
-  def classCodecAuto[A]: MessageCodec[A] = macro Impl.classCodecAuto[A]
-  def classCodecNums[A](nums: (String, Int)*)(constructor: Any): MessageCodec[A] = macro Impl.classCodecString[A]
+//   def classCodecAuto[A]: MessageCodec[A] = macro Impl.classCodecAuto[A]
+//   def classCodecNums[A](nums: (String, Int)*)(constructor: Any): MessageCodec[A] = macro Impl.classCodecString[A]
 
-  def sealedTraitCodecAuto[A]: MessageCodec[A] = macro Impl.sealedTraitCodecAuto[A]
-  def sealedTraitCodecNums[A](nums: (String, Int)*): MessageCodec[A] = macro Impl.sealedTraitCodecString[A]
-}
+//   def sealedTraitCodecAuto[A]: MessageCodec[A] = macro Impl.sealedTraitCodecAuto[A]
+//   def sealedTraitCodecNums[A](nums: (String, Int)*): MessageCodec[A] = macro Impl.sealedTraitCodecString[A]
+// }
 
 class Impl(val c: Context) extends BuildCodec {
   import c.universe._
